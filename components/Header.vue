@@ -15,21 +15,23 @@
 @import "../assets/base";
 
 header {
+  width: 100%;
+  height: 140px;
   display: flex;
   justify-content: space-between;
   .header-div-wrap_right {
-    margin: 42px 0 0 80px;
-  }
-  .header-h1-title {
-    font-size: 50px;
+    margin: 42px 0 0 $marginleft;
+    .header-h1-title {
+      font-size: 50px;
+    }
   }
   .header-div-wrap_left {
     display: flex;
     margin: 55px;
-  }
-  .header-h2-subtitle {
-    font-size: 35px;
-    margin: 0 75px 0 0;
+    .header-h2-subtitle {
+      font-size: 35px;
+      margin: 0 75px 0 0;
+    }
   }
 }
 </style>
