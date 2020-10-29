@@ -1,14 +1,12 @@
 <template>
-  </section>
+<p>test
+</p>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
 
 export default {
-  components: {
-    AppLogo
-  }
+  name:"top"
 }
 </script>
 
