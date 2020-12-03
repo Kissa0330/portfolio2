@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss">
-@import "../assets/base";
+
 
 header {
   width: 100%;
@@ -20,7 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   .header-div-wrap_right {
-    margin: 42px 0 0 $marginleft;
+    margin: 42px 0 0 80px;
     .header-h1-title {
       font-size: 50px;
     }

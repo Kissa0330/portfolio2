@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/base";
+
 .top-div-wrap {
   display: flex;
   justify-content: space-between;
