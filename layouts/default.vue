@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :style="{ color: colors.hex }" />
+    <Header />
     <nuxt />
     <client-only>
       <div class="default-div-picker">
@@ -18,61 +18,75 @@
       @click="pickerView = !pickerView"
       :style="{ backgroundColor: colors.hex }"
     >
-      <img src="../static/bucket.svg" alt="bucket" />
+      <img class="default-img-bucket" src="../static/bucket.svg" alt="bucket" />
     </button>
   </div>
 </template>
 
 <style lang="scss">
 @import url(../static/reset.css);
+@import "../assets/base";
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
+button:focus {
+	outline:0;
+}
 .default-button-bucket {
   position: fixed;
-  width: 118px;
-  height: 118px;
-  border-radius: 50%;
-  top: 882px;
-  right: 99px;
   left: auto;
   border: 0px;
   box-shadow: 0px;
+  border-radius: 50%;
+  @include larger-pc {
+    width: 118px;
+    height: 118px;
+    top: 882px;
+    right: 99px;
+  }
+  @include pc {
+    width: 80px;
+    height: 80px;
+    top: 640px;
+    right: 56px;
+    .default-img-bucket {
+      width: 34px;
+      height: 26px;
+    }
+  }
 }
 .default-div-picker {
   position: fixed;
-  top: 700px;
-  right: 50px;
   z-index: 3000;
+  @include larger-pc {
+    top: 700px;
+    right: 50px;
+  }
+  @include pc {
+    top: 480px;
+    right: 10px;
+    .vc-chrome {
+      width: 180px;
+    }
+  }
 }
 
-/* 表示アニメーションをする前のスタイル */
 .v-enter {
   opacity: 0;
 }
-
-/* 表示アニメーション後のスタイル */
 .v-enter-to {
   opacity: 1;
 }
-
-/* 表示アニメーション動作中のスタイル */
 .v-enter-active {
   transition: all 350ms;
 }
-
-/* 非表示アニメーション動作前のスタイル */
 .v-leave {
   opacity: 1;
 }
-
-/* 非表示アニメーション動作後のスタイル */
 .v-leave-to {
   opacity: 0;
 }
-
-/* 非表示アニメーション動作中のスタイル */
 .v-leave-active {
   transition: all 350ms;
 }
@@ -99,16 +113,18 @@ export default {
     }
   },
   mounted() {
-    // console.log(store.colors);
     document.addEventListener("click", e => {
-      if (!e.target.closest(".default-button-bucket")) {
+      if (
+        !e.target.closest(".default-button-bucket") &&
+        !e.target.closest(".default-div-picker")
+      ) {
         this.pickerView = 0;
       }
     });
   },
   methods: {
     updateValue(e) {
-      actions.colorsUpdate(e)
+      actions.colorsUpdate(e);
     }
   }
 };

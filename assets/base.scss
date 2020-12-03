@@ -1,2 +1,13 @@
 $media-pc:760px;
-$media-larger-pc:1920px;
+$media-larger-pc:1870px;
+
+@mixin pc {
+  @media only screen and (min-width: $media-pc ) {
+    @content;  
+  }
+}
+@mixin larger-pc {
+  @media only screen and (min-width: $media-larger-pc) {
+    @content;
+  }
+}
