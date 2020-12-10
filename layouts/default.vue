@@ -29,9 +29,28 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  @include pc {
+    p {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 60px;
+    }
+    h2 {
+      font-size: 55px;
+    }
+    h3 {
+      font-size: 35px;
+    }
+    h4 {
+      font-size: 25px;
+    }
+  }
 }
 button:focus {
-	outline:0;
+  outline: 0;
 }
 .default-button-bucket {
   position: fixed;
@@ -39,6 +58,7 @@ button:focus {
   border: 0px;
   box-shadow: 0px;
   border-radius: 50%;
+  cursor: pointer;
   @include larger-pc {
     width: 118px;
     height: 118px;
