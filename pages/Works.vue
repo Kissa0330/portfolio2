@@ -1,12 +1,6 @@
 <template>
-  <div
-    class="works-div-worksContainer"
-    :style="{ color: colors.hex, borderColor: colors.hex }"
-  >
-    <div
-      class="works-div-captionContainer"
-      :style="{ backgroundColor: colors.hex }"
-    >
+  <div class="works-div-worksContainer">
+    <div class="works-div-captionContainer">
       <h1 class="works-h1-captionText">WORKS</h1>
     </div>
     <div class="works-div-works">
@@ -56,8 +50,12 @@
 </template>
 <style lang="scss" scoped>
 @import "../assets/base";
-
+.works-div-worksContainer {
+  color: var(--color);
+  border-color: var(--color);
+}
 .works-div-captionContainer {
+  background-color: var(--color);
   @include pc {
     margin: 60px 0 0 53px;
     width: 351px;

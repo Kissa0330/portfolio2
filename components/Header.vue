@@ -1,17 +1,16 @@
 <template>
-  <header :style="{ color: colors.hex }">
+  <header>
     <div class="header-div-wrap">
       <div class="header-div-wrap_right">
         <h1 class="header-h1-title">RAIKA'S PORTFOLIO</h1>
       </div>
       <div class="header-div-wrap_left">
-        <Nuxt-link to="/" :style="inputColorVar">
+        <Nuxt-link to="/">
           <div class="header-div-textwrap">
             <h2 class="header-h2-subtitle">TOP</h2>
             <div
               class="header-div-top_line top"
-              v-if="this.headerLineView === 1"
-              :style="{ backgroundColor: colors.hex }"
+              :class="{ active: headerLineView === 1 }"
             />
           </div>
         </Nuxt-link>
@@ -20,8 +19,7 @@
             <h2 class="header-h2-subtitle">ABOUT</h2>
             <div
               class="header-div-top_line about"
-              v-if="this.headerLineView === 2"
-              :style="{ backgroundColor: colors.hex }"
+              :class="{ active: headerLineView === 2 }"
             />
           </div>
         </Nuxt-link>
@@ -30,8 +28,7 @@
             <h2 class="header-h2-subtitle">WORKS</h2>
             <div
               class="header-div-top_line works"
-              v-if="this.headerLineView === 3"
-              :style="{ backgroundColor: colors.hex }"
+              :class="{ active: headerLineView === 3 }"
             />
           </div>
         </Nuxt-link>
@@ -44,6 +41,7 @@
 @import "../assets/base";
 
 header {
+  color: var(--color);
   width: 100%;
   .header-div-wrap {
     display: flex;
@@ -81,7 +79,7 @@ header {
         a {
           text-decoration: none;
           &:visited {
-            color: var(--a-color);
+            color: var(--color);
           }
         }
         .header-h2-subtitle {
@@ -89,19 +87,28 @@ header {
           margin: 0 40.5px 0 0;
         }
         .header-div-top_line {
+          background-color: var(--color);
           height: 3px;
           margin: 8px 0 0 -4px;
-          &.top {
-            width: 65px;
+          width: 0px;
+          &.active {
+            &.top {
+              width: 65px;
+            }
+            &.about {
+              width: 118px;
+              margin-left: -8px;
+            }
+            &.works {
+              width: 125px;
+              margin-left: -8px;
+            }
           }
-          &.about {
-            width: 118px;
-            margin-left: -8px;
-          }
-          &.works {
-            width: 125px;
-            margin-left: -8px;
-          }
+        }
+      }
+      .header-div-wrap_left:hover {
+        .header-div-top_line {
+          // hover時のアニメーション記述
         }
       }
     }
@@ -115,11 +122,6 @@ export default {
   computed: {
     colors() {
       return store.colors;
-    },
-    inputColorVar() {
-      return {
-        "--a-color": this.colors.hex
-      };
     },
     headerLineView() {
       if (this.$route.path === "/") {

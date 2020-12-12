@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="about-div-aboutContainer"
-    :style="{ color: colors.hex,borderColor: colors.hex}"
-  >
+  <div class="about-div-aboutContainer">
     <div class="about-div-profileContainer">
       <div class="about-div-profileLeft">
         <div class="about-div-captionContainer">
@@ -24,24 +21,15 @@
         <div class="about-div-links">
           <div class="about-div-link">
             <h4 class="about-div-linkTitle">Twitter</h4>
-            <div
-              class="about-div-linkLine Twitter"
-              :style="{ backgroundColor: colors.hex }"
-            />
+            <div class="about-div-linkLine Twitter" />
           </div>
           <div class="about-div-link">
             <h4 class="about-div-linkTitle">Github</h4>
-            <div
-              class="about-div-linkLine Github"
-              :style="{ backgroundColor: colors.hex }"
-            />
+            <div class="about-div-linkLine Github" />
           </div>
           <div class="about-div-link">
             <h4 class="about-div-linkTitle">Mail:raika4789@gmail.com</h4>
-            <div
-              class="about-div-linkLine Gmail"
-              :style="{ backgroundColor: colors.hex }"
-            />
+            <div class="about-div-linkLine Gmail" />
           </div>
         </div>
       </div>
@@ -56,7 +44,7 @@
       </div>
       <div class="about-div-boxes">
         <div class="about-div-box" v-for="skill in skills" :key="skill">
-          <p class="about-p-boxText">{{skill}}</p>
+          <p class="about-p-boxText">{{ skill }}</p>
         </div>
       </div>
     </div>
@@ -66,6 +54,8 @@
 @import "../assets/base";
 
 .about-div-aboutContainer {
+  color: var(--color);
+  border-color: var(--color);
   @include pc {
     margin: 0 0 0 53px;
     .about-div-profileContainer {
@@ -138,7 +128,7 @@
   display: flex;
   flex-wrap: wrap;
   @include pc {
-    margin: 30px 35px 0 -25px;
+    margin: 30px 35px 100px -25px;
     .about-div-box {
       margin: 20px 0 0 25px;
       border: solid 2px;
@@ -151,14 +141,26 @@
     }
   }
 }
+.about-div-linkLine {
+  background-color: var(--color);
+}
 </style>
 <script>
 import { store } from "../store/store";
 export default {
   name: "About",
-  data: function () {
+  data: function() {
     return {
-      skills:["HTML/CSS","JavaScript","Vue","d3","XD","Figma","Sketch","Node.js"]
+      skills: [
+        "HTML/CSS",
+        "JavaScript",
+        "Vue",
+        "d3",
+        "XD",
+        "Figma",
+        "Sketch",
+        "Node.js"
+      ]
     };
   },
   computed: {

@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="top-div-wrap">
-      <div class="top-div-Hello" :style="{ backgroundColor: colors.hex }">
+      <div class="top-div-Hello">
         <h1 class="top-h1-Hello_text">Hello</h1>
       </div>
       <img class="top-img-me" src="../static/me1.svg" alt="It's me" />
     </div>
-    <div class="top-div-introduction" :style="{ backgroundColor: colors.hex }">
+    <div class="top-div-introduction">
       <h3 class="top-h3-introduction">I'm frontend engineer and designer</h3>
     </div>
   </div>
@@ -71,8 +71,11 @@ export default {
     }
   }
 }
-
+.top-div-Hello {
+  background-color: var(--color);
+}
 .top-div-introduction {
+  background: var(--color);
   @include larger-pc {
     margin: 0 0 0 80px;
     width: 877px;

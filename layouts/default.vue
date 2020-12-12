@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="inputColorVar">
     <Header />
     <nuxt />
     <client-only>
@@ -31,6 +31,7 @@ body {
   font-weight: bold;
   text-align: center;
   margin: 0 auto 0 auto;
+  color: var(--color);
   @include pc {
     p {
       font-size: 20px;
@@ -130,6 +131,11 @@ export default {
   computed: {
     colors() {
       return store.colors;
+    },
+    inputColorVar() {
+      return {
+        "--color": this.colors.hex
+      };
     }
   },
   mounted() {
