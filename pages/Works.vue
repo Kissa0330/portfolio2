@@ -94,7 +94,7 @@ export default {
       works: [
         { name: "Noerr", category: "- UI design" },
         { name: "DisPlay", category: "- UI design / Frontend" },
-        { name: "Gallery", category: "- Others works" }
+        { name: "Gallery(Behance)", category: "- Others works" }
       ],
       isActive: 1
     };

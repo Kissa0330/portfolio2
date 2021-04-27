@@ -63,6 +63,8 @@ header {
         }
       }
     }
+
+    
     @include pc {
       height: 120px;
       justify-content: space-between;
@@ -112,6 +114,15 @@ header {
         }
       }
     }
+  }
+}
+
+@keyframes header-pc {
+  0% {
+    background-color: skyblue;
+  }
+  100% {
+    background-color: orange;
   }
 }
 </style>

@@ -28,8 +28,8 @@
             <div class="about-div-linkLine Github" />
           </div>
           <div class="about-div-link">
-            <h4 class="about-div-linkTitle">Mail:raika4789@gmail.com</h4>
-            <div class="about-div-linkLine Gmail" />
+            <h4 class="about-div-linkTitle">Behance</h4>
+            <div class="about-div-linkLine Behance" />
           </div>
         </div>
       </div>
@@ -113,16 +113,16 @@
         &.Github {
           width: 90px;
         }
-        &.Gmail {
-          width: 348px;
+        &.Behance {
+          width: 120px;
         }
       }
     }
   }
 }
 .about-img-me {
-  margin: 40px 56px 0 0;
-  height: 465px;
+  margin: 40px 56px 0 40px;
+  height: 410px;
 }
 .about-div-boxes {
   display: flex;
@@ -144,6 +144,12 @@
 .about-div-linkLine {
   background-color: var(--color);
 }
+
+// 読み込み時アニメーション
+// @keyframes loaded {
+//   0%{}
+//   100%{}
+// }
 </style>
 <script>
 import { store } from "../store/store";
@@ -154,8 +160,12 @@ export default {
       skills: [
         "HTML/CSS",
         "JavaScript",
+        "TypeScript",
+        "Python",
+        "Scss",
         "Vue",
-        "d3",
+        "Vuex",
+        "AWS",
         "XD",
         "Figma",
         "Sketch",

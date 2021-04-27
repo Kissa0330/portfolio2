@@ -66,7 +66,7 @@ export default {
     }
     .top-img-me {
       margin: 60px 56px 0 0;
-      width: 596px;
+      width: 500px;
       height: 353px;
     }
   }
