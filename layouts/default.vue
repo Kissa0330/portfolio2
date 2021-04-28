@@ -1,5 +1,5 @@
 <template>
-  <div :style="inputColorVar">
+  <div class="all" :style="inputColorVar">
     <Header />
     <nuxt />
     <client-only>
@@ -110,6 +110,26 @@ button:focus {
 }
 .v-leave-active {
   transition: all 350ms;
+}
+
+.all {
+  animation: anime 3s ease-out;
+  will-change: animation;
+}
+@keyframes anime {
+  0% {
+    opacity: 0.2;
+    transform: translateX(-300px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 </style>
 

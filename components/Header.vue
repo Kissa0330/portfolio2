@@ -64,7 +64,7 @@ header {
       }
     }
 
-    
+
     @include pc {
       height: 120px;
       justify-content: space-between;
@@ -76,7 +76,7 @@ header {
       }
       .header-div-wrap_left {
         display: flex;
-        margin: 55px;
+        margin: 45px;
 
         a {
           text-decoration: none;
@@ -108,23 +108,16 @@ header {
           }
         }
       }
-      .header-div-wrap_left:hover {
-        .header-div-top_line {
-          // hover時のアニメーション記述
-        }
-      }
+      // .header-div-wrap_left:hover {
+      //   .header-div-top_line {
+      //     // hover時のアニメーション記述
+      //   }
+      // }
     }
   }
 }
 
-@keyframes header-pc {
-  0% {
-    background-color: skyblue;
-  }
-  100% {
-    background-color: orange;
-  }
-}
+
 </style>
 <script>
 import { store } from "../store/store";

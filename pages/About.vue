@@ -145,11 +145,6 @@
   background-color: var(--color);
 }
 
-// 読み込み時アニメーション
-// @keyframes loaded {
-//   0%{}
-//   100%{}
-// }
 </style>
 <script>
 import { store } from "../store/store";
