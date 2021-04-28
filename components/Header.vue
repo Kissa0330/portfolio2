@@ -6,37 +6,37 @@
       </div>
       <div class="header-div-wrap_left">
         <transition>
-        <Nuxt-link to="/">
-          <div class="header-div-textwrap">
-            <h2 class="header-h2-subtitle">TOP</h2>
-            <div
-              class="header-div-top_line top"
-              :class="{ active: headerLineView === 1 }"
-            />
-          </div>
-        </Nuxt-link>
+          <Nuxt-link to="/">
+            <div class="header-div-textwrap">
+              <h2 class="header-h2-subtitle">TOP</h2>
+              <div
+                class="header-div-top_line top"
+                :class="{ active: headerLineView === 1 }"
+              />
+            </div>
+          </Nuxt-link>
         </transition>
         <transition>
-        <Nuxt-link to="/about">
-          <div class="header-div-textwrap">
-            <h2 class="header-h2-subtitle">ABOUT</h2>
-            <div
-              class="header-div-top_line about"
-              :class="{ active: headerLineView === 2 }"
-            />
-          </div>
-        </Nuxt-link>
+          <Nuxt-link to="/about">
+            <div class="header-div-textwrap">
+              <h2 class="header-h2-subtitle">ABOUT</h2>
+              <div
+                class="header-div-top_line about"
+                :class="{ active: headerLineView === 2 }"
+              />
+            </div>
+          </Nuxt-link>
         </transition>
         <transition>
-        <Nuxt-link to="/works">
-          <div class="header-div-textwrap">
-            <h2 class="header-h2-subtitle">WORKS</h2>
-            <div
-              class="header-div-top_line works"
-              :class="{ active: headerLineView === 3 }"
-            />
-          </div>
-        </Nuxt-link>
+          <Nuxt-link to="/works">
+            <div class="header-div-textwrap">
+              <h2 class="header-h2-subtitle">WORKS</h2>
+              <div
+                class="header-div-top_line works"
+                :class="{ active: headerLineView === 3 }"
+              />
+            </div>
+          </Nuxt-link>
         </transition>
       </div>
     </div>
@@ -70,7 +70,6 @@ header {
       }
     }
 
-
     @include pc {
       height: 120px;
       justify-content: space-between;
@@ -99,26 +98,25 @@ header {
           height: 3px;
           margin: 8px 0 0 -4px;
           width: 0px;
+          transition: width 1s;
           &.active {
             &.top {
               width: 65px;
+              z-index: 300;
             }
             &.about {
               width: 118px;
               margin-left: -8px;
+              z-index: 300;
             }
             &.works {
               width: 125px;
               margin-left: -8px;
+              z-index: 300;
             }
           }
         }
       }
-      // .header-div-wrap_left:hover {
-      //   .header-div-top_line {
-      //     // hover時のアニメーション記述
-      //   }
-      // }
     }
   }
 }
@@ -140,7 +138,6 @@ header {
 .v-leave-active {
   transition: all 350ms;
 }
-
 </style>
 <script>
 import { store } from "../store/store";
