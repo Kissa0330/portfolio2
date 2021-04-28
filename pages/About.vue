@@ -7,16 +7,16 @@
         </div>
         <div class="about-div-introduceText">
           <p>
-            大阪で活動しているUI/UXデザイナー兼フロントエンドエンジニアです。
+            UI/UXデザイナー兼フロントエンドエンジニアです。
           </p>
           <p>
-            ユーザーフローのデザインとJSを使ったweb開発が得意です。
-            <br />Webデザインも行うフロントエンドや実装も行うWebデザイナーになれます。
+            Web/アプリのデザインやLPの実装、APIの実装などが出来ます。
+            <br />
           </p>
           <p>
-            自分が考えたものを作ってる瞬間とボードゲームをプレイしてる時間が大好きです。
+            自分が考えたものを作ってる瞬間が大好きです。
           </p>
-          <p>デザイナーやフロントエンジニアとしての依頼を募集しています。</p>
+          <p>デザイナーやフロントエンジニアのバイトやインターンを探しています。</p>
         </div>
         <div class="about-div-links">
           <div class="about-div-link">
@@ -136,7 +136,7 @@
       height: 56px;
       .about-p-boxText {
         margin: 18px 0 0 0;
-        font-size: 22px;
+        font-size: 20px;
       }
     }
   }
