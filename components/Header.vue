@@ -5,6 +5,7 @@
         <h1 class="header-h1-title">RAIKA'S PORTFOLIO</h1>
       </div>
       <div class="header-div-wrap_left">
+        <transition>
         <Nuxt-link to="/">
           <div class="header-div-textwrap">
             <h2 class="header-h2-subtitle">TOP</h2>
@@ -14,6 +15,8 @@
             />
           </div>
         </Nuxt-link>
+        </transition>
+        <transition>
         <Nuxt-link to="/about">
           <div class="header-div-textwrap">
             <h2 class="header-h2-subtitle">ABOUT</h2>
@@ -23,6 +26,8 @@
             />
           </div>
         </Nuxt-link>
+        </transition>
+        <transition>
         <Nuxt-link to="/works">
           <div class="header-div-textwrap">
             <h2 class="header-h2-subtitle">WORKS</h2>
@@ -32,6 +37,7 @@
             />
           </div>
         </Nuxt-link>
+        </transition>
       </div>
     </div>
   </header>
@@ -116,7 +122,24 @@ header {
     }
   }
 }
-
+.v-enter {
+  opacity: 0;
+}
+.v-enter-to {
+  opacity: 1;
+}
+.v-enter-active {
+  transition: all 350ms;
+}
+.v-leave {
+  opacity: 1;
+}
+.v-leave-to {
+  opacity: 0;
+}
+.v-leave-active {
+  transition: all 350ms;
+}
 
 </style>
 <script>

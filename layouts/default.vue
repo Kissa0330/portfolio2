@@ -1,25 +1,31 @@
 <template>
-  <div class="all" :style="inputColorVar">
+  <div class="anime1" :style="inputColorVar">
     <Header />
-    <nuxt />
-    <client-only>
-      <div class="default-div-picker">
-        <transition>
-          <chrome-picker
-            :value="colors"
-            @input="updateValue"
-            v-if="pickerView"
-          ></chrome-picker>
-        </transition>
+      <div class="container anime">
+        <nuxt />
       </div>
-    </client-only>
-    <button
-      class="default-button-bucket"
-      @click="pickerView = !pickerView"
-      :style="{ backgroundColor: colors.hex }"
-    >
-      <img class="default-img-bucket" src="../static/bucket.svg" alt="bucket" />
-    </button>
+      <client-only>
+        <div class="default-div-picker">
+          <transition>
+            <chrome-picker
+              :value="colors"
+              @input="updateValue"
+              v-if="pickerView"
+            ></chrome-picker>
+          </transition>
+        </div>
+      </client-only>
+      <button
+        class="default-button-bucket"
+        @click="pickerView = !pickerView"
+        :style="{ backgroundColor: colors.hex }"
+      >
+        <img
+          class="default-img-bucket"
+          src="../static/bucket.svg"
+          alt="bucket"
+        />
+      </button>
   </div>
 </template>
 
@@ -112,9 +118,32 @@ button:focus {
   transition: all 350ms;
 }
 
-.all {
-  animation: anime 3s ease-out;
+.page-enter {
+  opacity: 0.2;
+}
+.page-enter-to {
+  opacity: 1;
+}
+.page-enter-active {
+  transition: all 300ms;
+}
+.page-leave {
+  opacity: 1;
+}
+.page-leave-to {
+  opacity: 0;
+}
+.page-leave-active {
+  transition: all 300ms;
+}
+
+.anime {
+  animation: anime 2.5s ease-out;
   will-change: animation;
+}
+.anime1{
+    animation: anime1 3s ease-out;
+      will-change: animation;
 }
 @keyframes anime {
   0% {
@@ -129,6 +158,17 @@ button:focus {
   }
   100% {
     transform: translateX(0px);
+  }
+}
+@keyframes anime1 {
+  0% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity:1;
   }
 }
 </style>
